@@ -34,7 +34,7 @@ public class EmpAuthController {
         authenticate(authValue.getUsername(), authValue.getPassword());
         UserDetails userDetailService = this.userDetailService.loadUserByUsername(authValue.getUsername());
         String token = this.tokenUtil.generateToken(userDetailService);
-        return ResponseEntity.ok(new AuthToken(token));
+        return ResponseEntity.ok(new AuthToken("Bearer " + token));
     }
 
     private void authenticate(String username, String password) throws Exception {
