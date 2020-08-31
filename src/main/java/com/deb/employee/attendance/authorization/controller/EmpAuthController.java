@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.*;
  * Date : 17/08/2020
  */
 @RestController
-@CrossOrigin
 public class EmpAuthController {
     private final AuthenticationManager authManager;
     private final JwtTokenUtil tokenUtil;
